@@ -20,8 +20,8 @@ Temas:
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0118005	  |  Carlos Rafael Vasconcelos de Matos |
+| 17/0020525  |  Pedro Henrique de Lima Malaquias |
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
