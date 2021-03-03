@@ -1,0 +1,19 @@
+{
+  "name": "corona_risco",
+  "version": "1.0.0",
+  "description": "risco de infeccoes por proximidade",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projeto-de-algoritmos/Grafos2_Rafael_Pedro.git"
+  },
+  "author": "Pedro lima e Carlos Rafael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/projeto-de-algoritmos/Grafos2_Rafael_Pedro/issues"
+  },
+  "homepage": "https://github.com/projeto-de-algoritmos/Grafos2_Rafael_Pedro#readme"
+}
