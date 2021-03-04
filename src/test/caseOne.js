@@ -1,4 +1,4 @@
-const Graph = require('../logic/graph');
+const Graph = require('../logic/class/Graph');
 var vertice = 6;
 var teste = new Graph(vertice);
 
@@ -14,13 +14,15 @@ teste.addVertex('Rafael');
 teste.addEdge('Carlos', 'Bruna'); 
 teste.addEdge('Carlos', 'John'); 
 teste.addEdge('Carlos', 'Pedro'); 
-teste.addEdge('Bruna', 'Chico'); 
+teste.addEdge('Bruna', 'Chico');
+teste.addEdge('Bruna', 'Carlos'); 
 teste.addEdge('John', 'Pedro'); 
 teste.addEdge('Pedro', 'Rafael'); 
 teste.addEdge('Pedro', 'Chico'); 
 teste.addEdge('Chico', 'Rafael');
 teste.addEdge('Chico', 'Carlos'); 
 
+teste.print();
 console.log("DFS -> Profundidade\n");
 teste.dfs();
 teste.timeSorted();
