@@ -84,7 +84,7 @@ class Graph {
       return a.time - b.time;
     });
     for (var j=0; j<sortable.length ; ++j){
-      sortable[j] = sortable[j].node;
+     sortable[j] = sortable[j].node;
     }
     return sortable;
   }
@@ -100,7 +100,7 @@ class Graph {
     
         if (!visitadosInverse[v]) 
         {   
-            console.log("Grupo " + ++i);
+            console.log("Grupo " + ++i + "\n");
             this.pathInverse(v, visitadosInverse);
         }
       } 
@@ -116,3 +116,5 @@ class Graph {
       }
   }
 }
+
+module.exports = Graph;
