@@ -4,7 +4,7 @@ const Person = require('./class/Person');
 
 var pessoas = [];
 
-var ambiente = new graph(71);
+var g = new graph(71);
 
 var validate = (array, index, size) => {
     var esq = -1, dir = size;
@@ -20,7 +20,7 @@ var validate = (array, index, size) => {
 }
 
 for(var i = 0 ; i<name.length; ++i){
-    ambiente.addVertex(name[i]);
+    g.addVertex(name[i]);
     pessoas.push(new Person(name[i]));
 }
 
@@ -31,12 +31,12 @@ for(var j = 0; j < name.length; ++j){
        var vertex = parseInt(Math.random() * (72 - 0) + 0);
        if(vertex!=j && validate(verifica.sort((a,b) => a-b), vertex , verifica.length)){
 
-           ambiente.addEdge(name[j],name[vertex]);
+           g.addEdge(name[j],name[vertex]);
            verifica.push(vertex);
 
        }
     }
 }
-ambiente.print();
-ambiente.dfs();
-ambiente.dfsInverseGraph();
+g.print();
+g.dfs();
+g.dfsInverseGraph();
