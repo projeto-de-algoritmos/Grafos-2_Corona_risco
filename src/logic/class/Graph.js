@@ -7,6 +7,7 @@ class Graph {
     this.time = 0;
     this.prev = [];
     this.post = [];
+    this.groups = new Map();
   }
 
   getKeys() {
@@ -14,6 +15,9 @@ class Graph {
   }
   getValues(i) {
     return this.listAdj.get(i);
+  }
+  getGroups() {
+    return this.groups;
   }
   addVertex(v) {
     this.listAdj.set(v, []);
@@ -78,13 +82,13 @@ class Graph {
   timeSorted(){
     var sortable = [];
     for (var i in this.post) {
-      sortable.push(this.post[i]);
+        sortable.push(this.post[i]);
     }
     sortable.sort(function(a, b) {
-      return a.time - b.time;
+        return a.time - b.time;
     });
     for (var j=0; j<sortable.length ; ++j){
-     sortable[j] = sortable[j].node;
+        sortable[j] = sortable[j].node;
     }
     return sortable;
   }
@@ -100,19 +104,22 @@ class Graph {
     
         if (!visitadosInverse[v]) 
         {   
-            console.log("Grupo " + ++i + "\n");
-            this.pathInverse(v, visitadosInverse);
+            //console.log("Grupo", i+1, "\n");
+            this.groups.set(i, []);
+            this.pathInverse(v, visitadosInverse, i);
+            i++;
         }
       } 
   }
-  pathInverse(v, visitados) {
+  pathInverse(v, visitados, i) {
       visitados[v] = true;
-      console.log(v)// Vertice atual  
-
+      //console.log(v)// Vertice atual  
+      this.groups.get(i).push(v);
+      
       var get_values = this.listAdjInverse.get(v);
       for (var w in get_values) {
           var value = get_values[w];
-          if (!visitados[value]) this.pathInverse(value, visitados);
+          if (!visitados[value]) this.pathInverse(value, visitados, i);
       }
   }
 }
