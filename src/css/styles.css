@@ -6,7 +6,6 @@
 }
 
 .container {
-  padding: 10px 60px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -18,6 +17,10 @@ header {
   padding: 20px 0;
 }
 
+main {
+  background-color: rgb(158, 158, 158);
+}
+
 .name {
   max-width: 960px;
   margin-left: auto;
@@ -25,14 +28,27 @@ header {
   text-align: center;
 }
 
+#footer {
+  position: absolute;
+  bottom: 0;
+}
+
 footer {
   width: 100%;
   background: #004d40;
   font-weight: bold;
   padding: 0.2rem;
+
+  position: relative;
+  bottom: 0;
 }
 
 footer p {
   margin: 0 auto;
   color: #fff;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
 }
