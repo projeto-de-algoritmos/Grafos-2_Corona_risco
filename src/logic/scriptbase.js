@@ -13,8 +13,8 @@ function draw() {
   background(158, 158, 158);
 
   for (var i = 0; i < vertices.length; i++) {
-    fill(255);
-    stroke(255);
-    ellipse(vertices[i].x, vertices[i].y, 15, 15);
+    fill(0, 137, 123);
+    stroke(0, 137, 123);
+    ellipse(vertices[i].x, vertices[i].y, 30, 30);
   }
 }
