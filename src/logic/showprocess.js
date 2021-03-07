@@ -1,4 +1,4 @@
-var name = [
+const names = [
   'Carlos',
   'Pedro',
   'Junior',
@@ -73,4 +73,13 @@ var name = [
   'Gabriella',
 ];
 
-module.exports = name;
+let ul = document.createElement('ul');
+
+document.getElementById('shownames').appendChild(ul);
+
+names.forEach((names) => {
+  let li = document.createElement('li');
+  ul.appendChild(li);
+
+  li.innerHTML += names;
+});

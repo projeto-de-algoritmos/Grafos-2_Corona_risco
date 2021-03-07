@@ -16,5 +16,6 @@ function draw() {
     fill(0, 137, 123);
     stroke(0, 137, 123);
     ellipse(vertices[i].x, vertices[i].y, 30, 30);
+    console.log(vertices[i]);
   }
 }

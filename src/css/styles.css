@@ -28,6 +28,25 @@ main {
   text-align: center;
 }
 
+#shownames {
+  width: 960px;
+  height: 2rem;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#shownames h2 {
+  margin: 10px;
+}
+
+#shownames ul {
+  text-align: center;
+  list-style: none;
+  display: flex;
+  flex-flow: wrap column;
+  max-height: 150px;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
