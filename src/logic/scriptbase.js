@@ -1,7 +1,7 @@
 var vertices = [];
 
 function setup() {
-  createCanvas(1400, 660);
+  createCanvas(1200, 560);
 }
 
 function mousePressed() {
