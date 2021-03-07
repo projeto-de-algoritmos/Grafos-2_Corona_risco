@@ -1,10 +1,9 @@
 const graph = require('./class/Graph');
 const name = require('./database/names');
-const Person = require('./class/Person');
 
-var pessoas = [];
 
-var ambiente = new graph(71);
+var g = new graph(71);
+
 
 var validate = (array, index, size) => {
     var esq = -1, dir = size;
@@ -19,24 +18,26 @@ var validate = (array, index, size) => {
     return (dir===index) ? false : true;
 }
 
-for(var i = 0 ; i<name.length; ++i){
-    ambiente.addVertex(name[i]);
-    pessoas.push(new Person(name[i]));
+for(var i = 0 ; i<name.length ; ++i){
+    g.addVertex(name[i]);
 }
+//console.log(name.length)
 
 for(var j = 0; j < name.length; ++j){
     var verifica = [];
-    var edges = parseInt(Math.random() * (3 - 0) + 0);
+    var edges = parseInt(Math.random() * (5 - 0) + 0);
     for(var h = 0; h < edges; ++h){
-       var vertex = parseInt(Math.random() * (72 - 0) + 0);
-       if(vertex!=j && validate(verifica.sort((a,b) => a-b), vertex , verifica.length)){
+       var vertex = parseInt(Math.random() * (71 - 0) + 0);
+       if(validate(verifica.sort((a,b) => a-b), vertex , verifica.length)){
 
-           ambiente.addEdge(name[j],name[vertex]);
+           g.addEdge(name[j],name[vertex]);
            verifica.push(vertex);
 
        }
     }
 }
-ambiente.print();
-ambiente.dfs();
-ambiente.dfsInverseGraph();
+//g.print();
+g.dfs();
+g.dfsInverseGraph();
+var arebaba = g.getGroups();
+console.log(arebaba);
