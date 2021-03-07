@@ -41,5 +41,4 @@ g.dfs();
 g.dfsInverseGraph();
 var arebaba = g.getGroups();
 
-export default arebaba;
 console.log(arebaba);
