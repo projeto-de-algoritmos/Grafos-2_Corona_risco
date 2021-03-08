@@ -82,6 +82,7 @@ class Graph {
 
   // Ordenando Post obtidos DFS 
   timeSorted(){
+
     var sortable = [];
     for (var i in this.post) {
         sortable.push(this.post[i]);
@@ -93,6 +94,7 @@ class Graph {
         sortable[j] = sortable[j].node;
     }
     return sortable;
+    
   }
   
   // DFS no grafo inverso;
