@@ -12,10 +12,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-var g = new graph(71);
+let g = new graph(71);
 
 // Busca para verificar se a vertice já foi adicionada anteriormente
-
 var validate = (array, index, size) => {
 
   var esq = -1,
@@ -64,8 +63,9 @@ g.dfs();
 g.dfsInverseGraph();
 
 var allGroups = g.getGroups();
-
 console.log(allGroups);
+
+
 
 app.get('/', async(req, res) => {
 
