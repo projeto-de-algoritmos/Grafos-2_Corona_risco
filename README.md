@@ -1,21 +1,7 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Corona Risco
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Dupla**: 8 <br>
+**Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -24,22 +10,50 @@ Temas:
 | 17/0020525  |  Pedro Henrique de Lima Malaquias |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Mostrar quais pessoas tem mais chances de estarem infectadas pelo vírus, utilizando o algoritmo SCC para achar os grupos fortemente conectados. Abstraindo a ideia, temos o grafo como sendo, por exemplo, uma empresa, onde arestas são pequenos ambientes desta empresa em que U esteve depois de V; sendo u e v, vertices do grafo.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![](Screenshots/header.png)
+![](Screenshots/people.png)
+![](Screenshots/maioresChances.png)
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+**Linguagem**: JavaScript<br>
+**Framework**: Express/Node <br>
+
+Para instalação do projeto, é necessário executar os seguintes comandos:
+```
+Instalar o Node. (Caso não o tenha)
+
+git clone https://github.com/projeto-de-algoritmos/Corona_risco.git
+
+cd Corona_risco
+
+npm install ou yarn install 
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+```
+Na pasta do projeto:
+
+- cd src
+- cd logic
+- node master.js
+
+
+Servidor estará rodando...
+
+- Acesse no seu navegador 
+http://localhost:3030/
+
+```
+
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
 
+Caso não seja possível, rodar o projeto. Será necessário baixar/instalar o node; e colocar no path (variaveis de ambiente do sistema).
 
 
 
