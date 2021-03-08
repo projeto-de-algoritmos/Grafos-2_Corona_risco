@@ -1,10 +1,23 @@
+const express = require('express');
+const app = express();
+const path = require('path');
 const graph = require('./class/Graph');
+const bodyParser = require('body-parser');
 const name = require('./database/names');
+
+app.set('views', path.join(__dirname,"..", 'views'));
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(express.static('public'));
 
 var g = new graph(71);
 
 // Busca para verificar se a vertice já foi adicionada anteriormente
+
 var validate = (array, index, size) => {
+
   var esq = -1,
     dir = size;
   while (esq < dir - 1) {
@@ -13,6 +26,7 @@ var validate = (array, index, size) => {
     else dir = half;
   }
   return dir === index ? false : true;
+
 };
 
 // Adicionando Vertice;
@@ -51,25 +65,42 @@ g.dfsInverseGraph();
 
 var allGroups = g.getGroups();
 
-// Pessoa infectada.
-var nome = 'Mariano';
- 
-var vertex = allGroups.keys();
-
-// Encontrando grupo com risco de infecção, dada uma pessoa infectada.
-for (var i of vertex) {
-  var listAdj = allGroups.get(i);
-  for (var j = 0; j < listAdj.length; ++j) {
-
-    if(listAdj[j] == nome){
-      var riskGroup = listAdj.slice();
-      break;
-    }
-
-  }
-}
-// Todos os grupos;
 console.log(allGroups);
-// Grupo com maiores Riscos; 
-console.log(riskGroup);
 
+app.get('/', async(req, res) => {
+
+    res.render("home", {name : name});
+
+})
+
+app.post('/', async(req,res)=>{
+
+    const nameInfect = req.body.name;
+    var riskGroup = [];
+ 
+    if(nameInfect != undefined){
+      var vertex = allGroups.keys();
+      //Encontrando grupo com risco de infecção, dada uma pessoa infectada.
+      for (var i of vertex) {
+        var listAdj = allGroups.get(i);
+        for (var j = 0; j < listAdj.length; ++j) {
+          if(listAdj[j] == nameInfect ){
+            var riskGroup = listAdj.slice();
+            break; 
+          }
+        }
+      }
+      if(riskGroup.length)res.render("pessoas", {riskGroup: riskGroup});
+      else {
+        res.redirect("/");
+      }
+    }
+    else {
+      res.redirect("/");
+    }
+      
+})
+
+app.listen(3030, () => {
+  console.log("App running");
+})
