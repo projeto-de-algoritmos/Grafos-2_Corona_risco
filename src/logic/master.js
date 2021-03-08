@@ -21,10 +21,11 @@ for (var i = 0; i < name.length; ++i) {
 
 for (var j = 0; j < name.length; ++j) {
   var verifica = [];
-  var edges = parseInt(Math.random() * (5 - 0) + 0);
+  var edges = parseInt(Math.random() * (4 - 0) + 0);
   for (var h = 0; h < edges; ++h) {
     var vertex = parseInt(Math.random() * (71 - 0) + 0);
     if (
+      vertex!=j &&
       validate(
         verifica.sort((a, b) => a - b),
         vertex,
@@ -39,7 +40,23 @@ for (var j = 0; j < name.length; ++j) {
 //g.print();
 g.dfs();
 g.dfsInverseGraph();
-var arebaba = g.getGroups();
 
-export default arebaba;
-console.log(arebaba);
+var allGroups = g.getGroups();
+
+var nome = 'Mariano';
+ 
+
+var vertex = allGroups.keys();
+for (var i of vertex) {
+  var listAdj = allGroups.get(i);
+  var sum = '';
+  for (var j = 0; j < listAdj.length; ++j) {
+    if(listAdj[j] == nome){
+      var riskGroup = listAdj.slice();
+      break;
+    }
+  }
+}
+console.log(allGroups); 
+console.log(riskGroup);
+
