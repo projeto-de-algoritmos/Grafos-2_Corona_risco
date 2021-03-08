@@ -13,9 +13,9 @@
 Mostrar quais pessoas tem mais chances de estarem infectadas pelo vírus, utilizando o algoritmo SCC para achar os grupos fortemente conectados. Abstraindo a ideia, temos o grafo como sendo, por exemplo, uma empresa, onde arestas são pequenos ambientes desta empresa em que U esteve depois de V; sendo u e v, vertices do grafo.
 
 ## Screenshots
-![](Screenshots/header.png)
-![](Screenshots/people.png)
-![](Screenshots/maioresChances.png)
+![](img/header.png)
+![](img/people.png)
+![](img/maioresChances.png)
 
 ## Instalação 
 
